@@ -161,7 +161,7 @@ port * arduino_init(const char *device)
     port *arduino = malloc(sizeof(port));
 
     arduino->fd = open(device, O_RDWR);
-    if( arduino->fd == -1 )
+    if( arduino->fd <= 0 )
     {
 	return NULL;
     }
